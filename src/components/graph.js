@@ -13,7 +13,7 @@ export const Graph = (props) => {
     },
     datasets: [
       {
-        label: "P",
+        label: "Presiune parțială a vaporilor - P",
         data: props.p,
         fill: false,
         backgroundColor: "rgb(63, 81, 181)",
@@ -21,7 +21,7 @@ export const Graph = (props) => {
         lineTension: 0,
       },
       {
-        label: "Ps",
+        label: "Presiune de saturație - Ps",
         data: props.ps,
         fill: false,
         backgroundColor: "rgb(181, 163, 63)",
@@ -30,6 +30,7 @@ export const Graph = (props) => {
       },
     ],
   };
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -62,6 +63,54 @@ export const Graph = (props) => {
     },
   };
 
+  const graphData2 = {
+    labels: props.delta,
+    canvas: {
+      backgroundColor: "rgba(50, 50, 50, 0.5)",
+    },
+    datasets: [
+      {
+        label: "θ",
+        data: props.delta,
+        fill: false,
+        backgroundColor: "rgb(63, 81, 181)",
+        borderColor: "rgba(63, 81, 181, 0.5)",
+        lineTension: 0,
+      },
+    ],
+  };
+  const options2 = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            beginAtZero: false,
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "θ [°C]",
+          },
+        },
+      ],
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: false,
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Temperatură [°C]",
+          },
+          gridLines: {
+            display: false,
+          },
+        },
+      ],
+    },
+  };
+
   const chartRef = useRef(null);
   const [image, setImage] = useState(0);
   const [isDrawn, setDrawn] = useState(false);
@@ -80,6 +129,11 @@ export const Graph = (props) => {
         <Paper elevation={10}>
           <Box p={1} mb={5} height={500}>
             <Line data={graphData} options={options} ref={chartRef} />
+          </Box>
+        </Paper>
+        <Paper elevation={10}>
+          <Box p={1} mb={5} height={500}>
+            <Line data={graphData2} options={options2} ref={chartRef} />
           </Box>
         </Paper>
         <Paper elevation={1}>
