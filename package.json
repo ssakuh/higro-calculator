@@ -2,6 +2,7 @@
   "name": "calculator-higro",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://ssakuh.github.io/higro-calculator",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -11,6 +12,8 @@
     "@testing-library/user-event": "^12.1.10",
     "chart.js": "^2.9.4",
     "fontsource-roboto": "^4.0.0",
+    "gh-pages": "^3.1.0",
+    "global": "^4.4.0",
     "react": "^17.0.1",
     "react-base64-downloader": "^2.1.6",
     "react-chartjs-2": "^2.11.1",
@@ -35,7 +38,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build && serve -s build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
