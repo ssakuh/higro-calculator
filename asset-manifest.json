@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/higro-calculator/static/css/main.d2777c05.chunk.css",
-    "main.js": "/higro-calculator/static/js/main.5969636e.chunk.js",
-    "main.js.map": "/higro-calculator/static/js/main.5969636e.chunk.js.map",
-    "runtime-main.js": "/higro-calculator/static/js/runtime-main.4b8a883d.js",
-    "runtime-main.js.map": "/higro-calculator/static/js/runtime-main.4b8a883d.js.map",
+    "main.js": "/higro-calculator/static/js/main.4ebb4f67.chunk.js",
+    "main.js.map": "/higro-calculator/static/js/main.4ebb4f67.chunk.js.map",
+    "runtime-main.js": "/higro-calculator/static/js/runtime-main.f890be74.js",
+    "runtime-main.js.map": "/higro-calculator/static/js/runtime-main.f890be74.js.map",
     "static/css/2.ce08a6f8.chunk.css": "/higro-calculator/static/css/2.ce08a6f8.chunk.css",
-    "static/js/2.a928368b.chunk.js": "/higro-calculator/static/js/2.a928368b.chunk.js",
-    "static/js/2.a928368b.chunk.js.map": "/higro-calculator/static/js/2.a928368b.chunk.js.map",
-    "static/js/3.f7bc6943.chunk.js": "/higro-calculator/static/js/3.f7bc6943.chunk.js",
-    "static/js/3.f7bc6943.chunk.js.map": "/higro-calculator/static/js/3.f7bc6943.chunk.js.map",
+    "static/js/2.9e29512d.chunk.js": "/higro-calculator/static/js/2.9e29512d.chunk.js",
+    "static/js/2.9e29512d.chunk.js.map": "/higro-calculator/static/js/2.9e29512d.chunk.js.map",
+    "static/js/3.d5fde0ca.chunk.js": "/higro-calculator/static/js/3.d5fde0ca.chunk.js",
+    "static/js/3.d5fde0ca.chunk.js.map": "/higro-calculator/static/js/3.d5fde0ca.chunk.js.map",
     "index.html": "/higro-calculator/index.html",
     "service-worker.js": "/higro-calculator/service-worker.js",
     "service-worker.js.map": "/higro-calculator/service-worker.js.map",
     "static/css/2.ce08a6f8.chunk.css.map": "/higro-calculator/static/css/2.ce08a6f8.chunk.css.map",
     "static/css/main.d2777c05.chunk.css.map": "/higro-calculator/static/css/main.d2777c05.chunk.css.map",
-    "static/js/2.a928368b.chunk.js.LICENSE.txt": "/higro-calculator/static/js/2.a928368b.chunk.js.LICENSE.txt",
+    "static/js/2.9e29512d.chunk.js.LICENSE.txt": "/higro-calculator/static/js/2.9e29512d.chunk.js.LICENSE.txt",
     "static/media/index.css": "/higro-calculator/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.4b8a883d.js",
+    "static/js/runtime-main.f890be74.js",
     "static/css/2.ce08a6f8.chunk.css",
-    "static/js/2.a928368b.chunk.js",
+    "static/js/2.9e29512d.chunk.js",
     "static/css/main.d2777c05.chunk.css",
-    "static/js/main.5969636e.chunk.js"
+    "static/js/main.4ebb4f67.chunk.js"
   ]
 }
