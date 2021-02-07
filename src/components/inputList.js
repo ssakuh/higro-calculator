@@ -26,17 +26,12 @@ const InputList = (props) => {
   return props.change.map((val, idx) => {
     return (
       <div key={val.index}>
-        <Box
-          flexDirection="row"
-          display="flex"
-          p={1}
-          m={1}
-          justifyContent="center"
-        >
+        <Box flexDirection="row" display="flex" p={0.5} justifyContent="center">
           <Box p={1}>
             <TextField
               type="number"
               variant="outlined"
+              size="small"
               label="d [m]"
               id="d [m]"
               min="0"
@@ -47,7 +42,11 @@ const InputList = (props) => {
               defaultValue={props.change[idx].d}
             />
           </Box>
-          <FormControl variant="outlined" className={classes.formControl}>
+          <FormControl
+            variant="outlined"
+            className={classes.formControl}
+            size="small"
+          >
             <InputLabel htmlFor="outlined-age-native-simple">
               λ [W/mK]
             </InputLabel>
@@ -57,7 +56,7 @@ const InputList = (props) => {
               onChange={props.onChange}
               label="λ [W/mK]"
               name="d"
-              inputProps={{ "data-id": `${idx}` }}
+              inputProps={{ "data-id": `${idx}`, size: "small" }}
             >
               <option aria-label="None" value="" />
               <option value={0}>Gol (0)</option>
@@ -89,6 +88,7 @@ const InputList = (props) => {
               id="μ"
               min="0"
               step="0.001"
+              size="small"
               name="u"
               onChange={props.onChange}
               inputProps={{ "data-id": `${idx}` }}
@@ -97,13 +97,21 @@ const InputList = (props) => {
           </Box>
           {idx === 0 ? (
             <Box p={1} m={0.5}>
-              <IconButton aria-label="delete" onClick={() => props.add()}>
+              <IconButton
+                aria-label="delete"
+                size="small"
+                onClick={() => props.add()}
+              >
                 <AddIcon />
               </IconButton>
             </Box>
           ) : (
             <Box p={1} m={0.5}>
-              <IconButton aria-label="delete" onClick={() => props.delete(val)}>
+              <IconButton
+                aria-label="delete"
+                size="small"
+                onClick={() => props.delete(val)}
+              >
                 <DeleteIcon />
               </IconButton>
             </Box>

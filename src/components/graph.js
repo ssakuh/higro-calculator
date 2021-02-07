@@ -126,17 +126,17 @@ export const Graph = (props) => {
   return (
     <>
       <Container mt={10}>
-        <Paper elevation={10}>
+        <Paper elevation={2}>
           <Box p={1} mb={5} height={500}>
             <Line data={graphData} options={options} ref={chartRef} />
           </Box>
         </Paper>
-        <Paper elevation={10}>
+        <Paper elevation={2}>
           <Box p={1} mb={5} height={500}>
             <Line data={graphData2} options={options2} ref={chartRef} />
           </Box>
         </Paper>
-        <Paper elevation={1}>
+        <Paper elevation={10}>
           <Box p={1} mb={5} alignItems="center">
             <Fade in={isDrawn}>
               <Box justifyContent="space-around" display="flex">

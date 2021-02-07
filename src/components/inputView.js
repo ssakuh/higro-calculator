@@ -86,7 +86,7 @@ class InputView extends React.Component {
       d = [],
       l = [],
       u = [],
-      g = [" ", 0],
+      g = [0],
       t = [],
       x = this.state,
       v = this.state.values,
@@ -110,10 +110,11 @@ class InputView extends React.Component {
     }
     let sum_r = [r[0] + x.rsi];
     let sum_rv = [rv[0]];
-    for (let i = 1; i < v.length; i++) {
-      let t = Number(g[i - 1] + v[i].d);
+    for (let i = 0; i < v.length; i++) {
+      let t = Number(g[i] + v[i].d);
       g.push(parseFloat(t.toFixed(3)));
     }
+
     for (let i = 1; i < v.length; i++) {
       sum_r.push(sum_r[i - 1] + r[i]);
       sum_rv.push(sum_rv[i - 1] + rv[i]);
@@ -136,13 +137,13 @@ class InputView extends React.Component {
       }
     }
     ps.push(ps_te);
+    g.unshift("Ps_ti");
+    g.push("Ps_te");
+
     let p = [null, pi];
 
     for (let i = 0; i < sum_rv.length; i++) {
       p.push(pi - (sum_rv[i] / sum_rv[rv.length - 1]) * (pi - pe));
-    }
-    for (let i = 0; i < ps.length - v.length; i++) {
-      g.push("");
     }
     t.push(x.ti - x.rsi / rt);
 
@@ -305,7 +306,7 @@ class InputView extends React.Component {
                 </Typography>
               </Box>
 
-              <Paper elevation={1} mt={3}>
+              <Paper elevation={15} mt={3} p={-2}>
                 <Box mb={5}>
                   <Box
                     flexDirection="row"
@@ -325,6 +326,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="ti"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.ti}
                       />
@@ -338,6 +340,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="te"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.te}
                       />
@@ -351,6 +354,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="rsi"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.rsi}
                       />
@@ -364,6 +368,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="rse"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.rse}
                       />
@@ -377,6 +382,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="fi"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.fi}
                       />
@@ -390,6 +396,7 @@ class InputView extends React.Component {
                         min="0"
                         step="0.001"
                         name="fe"
+                        size="small"
                         onChange={this.handleChange}
                         defaultValue={this.state.fe}
                       />
