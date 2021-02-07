@@ -703,12 +703,12 @@
         (function (e) {
           if ("serviceWorker" in navigator) {
             if (
-              new URL("", window.location.href).origin !==
+              new URL("/higro-calculator", window.location.href).origin !==
               window.location.origin
             )
               return;
             window.addEventListener("load", function () {
-              var t = "".concat("", "/service-worker.js");
+              var t = "".concat("/higro-calculator", "/service-worker.js");
               U
                 ? (!(function (e, t) {
                     fetch(e, { headers: { "Service-Worker": "script" } })
@@ -743,4 +743,4 @@
   },
   [[234, 1, 2]],
 ]);
-//# sourceMappingURL=main.7fbc3729.chunk.js.map
+//# sourceMappingURL=main.5969636e.chunk.js.map

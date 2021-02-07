@@ -124,7 +124,7 @@
     (a.o = function (e, r) {
       return Object.prototype.hasOwnProperty.call(e, r);
     }),
-    (a.p = "/"),
+    (a.p = "/higro-calculator/"),
     (a.oe = function (e) {
       throw (console.error(e), e);
     });
@@ -136,4 +136,4 @@
   var f = c;
   t();
 })([]);
-//# sourceMappingURL=runtime-main.ae956b17.js.map
+//# sourceMappingURL=runtime-main.4b8a883d.js.map
