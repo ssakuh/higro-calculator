@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/higro-calculator/static/css/main.d2777c05.chunk.css",
-    "main.js": "/higro-calculator/static/js/main.dd4b42a3.chunk.js",
-    "main.js.map": "/higro-calculator/static/js/main.dd4b42a3.chunk.js.map",
+    "main.js": "/higro-calculator/static/js/main.af06e040.chunk.js",
+    "main.js.map": "/higro-calculator/static/js/main.af06e040.chunk.js.map",
     "runtime-main.js": "/higro-calculator/static/js/runtime-main.5b70530f.js",
     "runtime-main.js.map": "/higro-calculator/static/js/runtime-main.5b70530f.js.map",
     "static/css/2.ce08a6f8.chunk.css": "/higro-calculator/static/css/2.ce08a6f8.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.ce08a6f8.chunk.css",
     "static/js/2.9d9095c6.chunk.js",
     "static/css/main.d2777c05.chunk.css",
-    "static/js/main.dd4b42a3.chunk.js"
+    "static/js/main.af06e040.chunk.js"
   ]
 }
