@@ -3,7 +3,7 @@ import { Line } from "react-chartjs-2";
 import { Button, Fade, Box, Container, Paper } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 import { triggerBase64Download } from "react-base64-downloader";
-import { CSVDownload, CSVLink } from "react-csv";
+import { CSVDownload } from "react-csv";
 
 export const Graph = (props) => {
   const graphData = {
@@ -111,12 +111,15 @@ export const Graph = (props) => {
     },
   };
 
-  const chartRef = useRef(null);
-  const [image, setImage] = useState(0);
+  const chartRef1 = useRef(null);
+  const chartRef2 = useRef(null);
+  const [graph1_image, setImage1] = useState(0);
+  const [graph2_image, setImage2] = useState(0);
   const [isDrawn, setDrawn] = useState(false);
   const [csv, setCsv] = useState(false);
   useEffect(() => {
-    setImage(chartRef.current.chartInstance.toBase64Image());
+    setImage1(chartRef1.current.chartInstance.toBase64Image());
+    setImage2(chartRef2.current.chartInstance.toBase64Image());
     if (props.p) {
       setDrawn(true);
     }
@@ -128,12 +131,12 @@ export const Graph = (props) => {
       <Container mt={10}>
         <Paper elevation={2}>
           <Box p={1} mb={5} height={500}>
-            <Line data={graphData} options={options} ref={chartRef} />
+            <Line data={graphData} options={options} ref={chartRef1} />
           </Box>
         </Paper>
         <Paper elevation={2}>
           <Box p={1} mb={5} height={500}>
-            <Line data={graphData2} options={options2} ref={chartRef} />
+            <Line data={graphData2} options={options2} ref={chartRef2} />
           </Box>
         </Paper>
         <Paper elevation={10}>
@@ -146,9 +149,24 @@ export const Graph = (props) => {
                     color="primary"
                     size="small"
                     startIcon={<SaveIcon />}
-                    onClick={() => triggerBase64Download(image, filename)}
+                    onClick={() =>
+                      triggerBase64Download(graph1_image, filename)
+                    }
                   >
-                    png grafic
+                    png grafic presiune
+                  </Button>
+                </Box>
+                <Box p={1}>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                    startIcon={<SaveIcon />}
+                    onClick={() =>
+                      triggerBase64Download(graph2_image, filename)
+                    }
+                  >
+                    png grafic temperatură
                   </Button>
                 </Box>
                 {csv ? (
@@ -170,7 +188,7 @@ export const Graph = (props) => {
                       setCsv(!csv) && setCsv(!csv);
                     }}
                   >
-                    csv date
+                    csv rezultate
                   </Button>
                 </Box>
               </Box>

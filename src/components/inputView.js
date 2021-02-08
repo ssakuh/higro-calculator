@@ -43,7 +43,7 @@ class InputView extends React.Component {
         { title: "Pământ vegetal în stare umedă (1,16)", value: 1.16 },
         { title: "Vată minerală (0,042)", value: 0.042 },
         { title: "Zidărie din BCA (0,3)", value: 0.3 },
-        { title: "Zidărie din cărămizi cu goluri mari (0,46)", value: 0.044 },
+        { title: "Zidărie din cărămizi cu goluri mari (0,46)", value: 0.46 },
         { title: "Zidărie din cărămizi pline (0,8)", value: 0.8 },
       ],
       values: [
@@ -56,13 +56,13 @@ class InputView extends React.Component {
         {
           index: Math.random(),
           d: 0.25,
-          l: 2,
+          l: 0.46,
           u: 20,
         },
         {
           index: Math.random(),
           d: 0.2,
-          l: 0.2,
+          l: 0.3,
           u: 5,
         },
         {
@@ -76,10 +76,6 @@ class InputView extends React.Component {
     this.compute();
   }
 
-  round = (value, decimals) => {
-    return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
-  };
-
   compute = () => {
     let r = [],
       rv = [],
@@ -87,7 +83,6 @@ class InputView extends React.Component {
       l = [],
       u = [],
       g = [0],
-      t = [],
       x = this.state,
       v = this.state.values,
       r_total = 0,
@@ -131,22 +126,27 @@ class InputView extends React.Component {
     console.log(delta);
     for (let i = 0; i < delta.length; i++) {
       if (delta[i] > 0) {
-        ps.push(610.5 * Math.exp((17.269 * delta[i]) / (237.3 + delta[i])));
+        temp = Number(
+          610.5 * Math.exp((17.269 * delta[i]) / (237.3 + delta[i]))
+        );
+        ps.push(parseFloat(temp.toFixed(3)));
       } else {
-        ps.push(610.5 * Math.exp((21.875 * delta[i]) / (265.5 + delta[i])));
+        temp = Number(
+          610.5 * Math.exp((21.875 * delta[i]) / (265.5 + delta[i]))
+        );
+        ps.push(parseFloat(temp.toFixed(3)));
       }
     }
     ps.push(ps_te);
-    g.unshift("Ps_ti");
-    g.push("Ps_te");
+    g.unshift("Ps_te");
+    g.push("Ps_ti");
 
     let p = [null, pi];
 
     for (let i = 0; i < sum_rv.length; i++) {
-      p.push(pi - (sum_rv[i] / sum_rv[rv.length - 1]) * (pi - pe));
+      temp = Number(pi - (sum_rv[i] / sum_rv[rv.length - 1]) * (pi - pe));
+      p.push(parseFloat(temp.toFixed(3)));
     }
-    t.push(x.ti - x.rsi / rt);
-
     this.setState({ P: p, Ps: ps, g: g, delta: delta });
     const output = [
       ["ti [°C]", this.state.ti],
@@ -183,10 +183,12 @@ class InputView extends React.Component {
       ["d", "l", "u", "r"].includes(e.target.id)
     ) {
       let parameters = [...this.state.values];
-      parameters[e.target.dataset.id][e.target.name] = e.target.value;
+      parameters[e.target.dataset.id][e.target.name] = parseFloat(
+        e.target.value
+      );
       this.compute();
     } else {
-      this.setState({ [e.target.name]: e.target.value }, () => {
+      this.setState({ [e.target.name]: parseFloat(e.target.value) }, () => {
         this.compute();
       });
     }
@@ -300,14 +302,21 @@ class InputView extends React.Component {
             </Snackbar>
             <Container>
               <Box mb={3} pt={5}>
-                <Typography variant="h3" component="h3" align="center">
-                  <Emoji symbol="🧮" label="sheep" />
-                  Higrotermica Clădirilor
-                </Typography>
+                <Box mb={3}>
+                  <Typography variant="h3" component="h3" align="center">
+                    <Emoji symbol="🧮" label="sheep" />
+                    Higrotermica Clădirilor
+                  </Typography>
+                </Box>
+                <Box mb={3}>
+                  <Typography variant="button" display="block" align="center">
+                    Termodifuzia vaporilor de apă prin elemente de anvelopă
+                  </Typography>
+                </Box>
               </Box>
 
-              <Paper elevation={15} mt={3} p={-2}>
-                <Box mb={5}>
+              <Paper elevation={15} mt={3}>
+                <Box mb={5} pb={3}>
                   <Box
                     flexDirection="row"
                     flexWrap="wrap"

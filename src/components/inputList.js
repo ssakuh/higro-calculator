@@ -42,44 +42,59 @@ const InputList = (props) => {
               defaultValue={props.change[idx].d}
             />
           </Box>
-          <FormControl
-            variant="outlined"
-            className={classes.formControl}
-            size="small"
-          >
-            <InputLabel htmlFor="outlined-age-native-simple">
-              λ [W/mK]
-            </InputLabel>
-            <Select
-              native
-              defaultValue={props.change[idx].l}
-              onChange={props.onChange}
+          <Box p={1}>
+            <TextField
+              type="number"
+              variant="outlined"
+              size="small"
               label="λ [W/mK]"
-              name="d"
-              inputProps={{ "data-id": `${idx}`, size: "small" }}
-            >
-              <option aria-label="None" value="" />
-              <option value={0}>Gol (0)</option>
-              <option value={1.74}>Beton armat (1,74)</option>
-              <option value={0.93}>Mortar de ciment (0,93)</option>
-              <option value={0.87}>Mortar de ciment și var (0,87)</option>
-              <option value={0.7}>Mortar de var (0,7)</option>
-              <option value={0.042}>Vată minerală (0,042)</option>
-              <option value={1.16}>Pământ vegetal în stare umedă (1,16)</option>
-              <option value={0.17}>Lemn de pin și brad (0,17)</option>
-              <option value={0.23}>Lemn de stejar și fag (0,23)</option>
-              <option value={0.8}>Zidărie din cărămizi pline (0,8)</option>
-              <option value={0.3}>Zidărie din BCA (0,3)</option>
-              <option value={58}>Oțel de construcții (58)</option>
-              <option value={0.044}>Polistiren celular (0,044)</option>
-              <option value={0.46}>
-                Zidărie din cărămizi cu goluri mari (0,46)
-              </option>
-              <option value={props.change[idx].l}>
-                Altceva {props.change[idx].l}
-              </option>
-            </Select>
-          </FormControl>
+              id="l [m]"
+              min="0"
+              step="0.001"
+              name="l"
+              onChange={props.onChange}
+              inputProps={{ "data-id": `${idx}` }}
+              defaultValue={props.change[idx].l}
+            />
+          </Box>
+          {/*<FormControl*/}
+          {/*  variant="outlined"*/}
+          {/*  className={classes.formControl}*/}
+          {/*  size="small"*/}
+          {/*>*/}
+          {/*  <InputLabel htmlFor="outlined-age-native-simple">*/}
+          {/*    λ [W/mK]*/}
+          {/*  </InputLabel>*/}
+          {/*  <Select*/}
+          {/*    native*/}
+          {/*    defaultValue={props.change[idx].l}*/}
+          {/*    onChange={props.onChange}*/}
+          {/*    label="λ [W/mK]"*/}
+          {/*    name="d"*/}
+          {/*    inputProps={{ "data-id": `${idx}`, size: "small" }}*/}
+          {/*  >*/}
+          {/*    <option aria-label="None" value="" />*/}
+          {/*    <option value={0}>Gol (0)</option>*/}
+          {/*    <option value={1.74}>Beton armat (1,74)</option>*/}
+          {/*    <option value={0.93}>Mortar de ciment (0,93)</option>*/}
+          {/*    <option value={0.87}>Mortar de ciment și var (0,87)</option>*/}
+          {/*    <option value={0.7}>Mortar de var (0,7)</option>*/}
+          {/*    <option value={0.042}>Vată minerală (0,042)</option>*/}
+          {/*    <option value={1.16}>Pământ vegetal în stare umedă (1,16)</option>*/}
+          {/*    <option value={0.17}>Lemn de pin și brad (0,17)</option>*/}
+          {/*    <option value={0.23}>Lemn de stejar și fag (0,23)</option>*/}
+          {/*    <option value={0.8}>Zidărie din cărămizi pline (0,8)</option>*/}
+          {/*    <option value={0.3}>Zidărie din BCA (0,3)</option>*/}
+          {/*    <option value={58}>Oțel de construcții (58)</option>*/}
+          {/*    <option value={0.044}>Polistiren celular (0,044)</option>*/}
+          {/*    <option value={0.46}>*/}
+          {/*      Zidărie din cărămizi cu goluri mari (0,46)*/}
+          {/*    </option>*/}
+          {/*    <option value={props.change[idx].l}>*/}
+          {/*      Altceva {props.change[idx].l}*/}
+          {/*    </option>*/}
+          {/*  </Select>*/}
+          {/*</FormControl>*/}
           <Box p={1}>
             <TextField
               type="number"
