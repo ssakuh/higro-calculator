@@ -1,6 +1,6 @@
 # higro-calculator
 
-https://sakuh.gq/higro-calculator/
+https://sakuh-cdn.ml/higro-calculator/
 
 custom calculator that generates line charts and CSV, built for homework.
 
